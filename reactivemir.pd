@@ -23,21 +23,22 @@ recording 8 seconds until full;
 #X obj 389 277 adc~;
 #N canvas 0 22 796 453 (subpatch) 0;
 #X array array1 100 float 3;
-#A 0 -0.300174 -0.265182 -0.227522 -0.190013 -0.152061 -0.114167 -0.0779766
--0.0465589 -0.0226011 -0.00514924 0.0071842 0.0147803 0.0179821 0.0149578
-0.00453036 -0.0107684 -0.0263161 -0.0398223 -0.0538697 -0.0689564 -0.0827169
--0.0951264 -0.106135 -0.115514 -0.122933 -0.126905 -0.127248 -0.123644
--0.115927 -0.106792 -0.0972579 -0.0843044 -0.0661595 -0.0448632 -0.0232993
--0.00397807 0.0114858 0.0236362 0.0335766 0.0425445 0.0490365 0.0484434
-0.0408567 0.0304129 0.0190172 0.00724248 -0.00331113 -0.0120162 -0.0193554
--0.0247804 -0.0272867 -0.0265378 -0.0246993 -0.0229601 -0.0190789 -0.0120544
--0.00217723 0.00938044 0.0211607 0.0337011 0.0464475 0.0564999 0.0630337
-0.0683396 0.0750482 0.0845744 0.0962277 0.107003 0.114489 0.122033
-0.133193 0.143788 0.150726 0.155895 0.159379 0.161087 0.160522 0.154127
-0.141572 0.126996 0.112256 0.0961903 0.077203 0.0563586 0.0384088 0.0246284
-0.0116613 -0.00236526 -0.018143 -0.0332279 -0.0402934 -0.0348676 -0.0192906
-0.000807698 0.0201407 0.0367347 0.0519808 0.0672457 0.0829971 0.100445
-;
+#A 0 0.00857572 0.0129609 0.0154096 0.0145589 0.00970869 0.00370912
+0.000147706 -0.00075343 -0.000965648 -0.000835063 -0.00086013 -0.00127908
+-0.00125517 -0.00144036 -0.00167287 -0.000405966 0.00213343 0.0055977
+0.00936878 0.0120209 0.0146552 0.0176399 0.0202061 0.0223257 0.0199415
+0.0112135 -0.000475081 -0.0134952 -0.0238458 -0.0279121 -0.029197 -0.0302002
+-0.0302975 -0.0293654 -0.0248446 -0.0160782 -0.0073592 0.000518348
+0.00842947 0.0150034 0.0199098 0.0213113 0.019674 0.0172304 0.0139562
+0.0121267 0.0104385 0.00581017 0.000420051 -0.00392568 -0.00709597
+-0.00857198 -0.00755852 -0.00471576 -0.00118587 0.00242176 0.00482587
+0.00512463 0.00303363 0.0013792 0.00276134 0.00559863 0.00812632 0.00859917
+0.00661419 0.00143477 -0.00886043 -0.020677 -0.0285699 -0.0317094 -0.0322419
+-0.0315824 -0.0274254 -0.0170807 -0.00372059 0.00602001 0.00967457
+0.0108561 0.0148342 0.0202366 0.0221344 0.0234275 0.0263452 0.0270849
+0.0253819 0.0216566 0.0159436 0.0104363 0.00396416 -0.00529448 -0.0151612
+-0.0237117 -0.0298475 -0.0329483 -0.0351035 -0.0357495 -0.0320484 -0.0250298
+-0.0154781 -0.00474214;
 #X coords 0 1 99 -1 200 140 1;
 #X restore 641 427 graph;
 #X obj 595 334 tabwrite~ array1;
@@ -61,9 +62,6 @@ recording 8 seconds until full;
 #X msg 261 618 open c8.wav \, 1;
 #X msg 255 590 open c4.wav \, 1;
 #X msg 244 565 open Bar-voces.wav \, 1;
-#X obj 259 484 random 3;
-#X obj 259 529 sel 0 1 2;
-#X obj 240 661 readsf~ 3;
 #X text 307 505 menos 20 sec;
 #X text 521 476 menos 01:35 sec.;
 #X obj 484 454 random 3;
@@ -76,58 +74,65 @@ recording 8 seconds until full;
 #X floatatom 387 394 5 0 0 0 - - -;
 #X obj 388 361 moses 60;
 #X floatatom 432 391 5 0 0 0 - - -;
+#X msg 271 640 open patio.wav \, 1;
+#X obj 259 529 sel 0 1 2 3;
+#X obj 259 484 random 4;
+#X obj 240 661 readsf~ 4;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
 #X connect 5 0 3 0;
 #X connect 5 0 6 0;
 #X connect 6 0 4 0;
-#X connect 8 0 40 0;
+#X connect 8 0 37 0;
 #X connect 9 0 10 0;
 #X connect 10 0 25 0;
-#X connect 11 0 39 0;
+#X connect 11 0 36 0;
 #X connect 12 0 9 0;
 #X connect 13 0 24 0;
-#X connect 13 0 44 0;
+#X connect 13 0 41 0;
 #X connect 13 0 23 0;
 #X connect 13 0 12 0;
 #X connect 16 0 18 0;
 #X connect 18 0 15 0;
-#X connect 19 0 35 0;
+#X connect 19 0 48 0;
 #X connect 20 0 21 0;
 #X connect 21 0 29 0;
-#X connect 22 0 34 0;
+#X connect 22 0 46 0;
 #X connect 23 0 20 0;
 #X connect 24 0 15 0;
-#X connect 25 0 38 0;
+#X connect 25 0 35 0;
 #X connect 27 0 26 0;
 #X connect 27 0 16 0;
 #X connect 28 0 27 0;
-#X connect 29 0 33 0;
-#X connect 30 0 35 0;
-#X connect 31 0 35 0;
-#X connect 32 0 35 0;
-#X connect 33 0 22 0;
-#X connect 34 0 32 0;
-#X connect 34 1 31 0;
-#X connect 34 2 30 0;
-#X connect 35 0 4 0;
-#X connect 35 1 4 0;
-#X connect 35 2 4 0;
-#X connect 35 3 4 0;
-#X connect 38 0 11 0;
-#X connect 39 0 41 0;
-#X connect 39 1 42 0;
-#X connect 39 2 43 0;
-#X connect 40 0 4 0;
-#X connect 40 1 4 0;
-#X connect 40 2 4 0;
-#X connect 40 3 4 0;
-#X connect 41 0 40 0;
-#X connect 42 0 40 0;
-#X connect 43 0 40 0;
-#X connect 44 0 46 0;
-#X connect 46 0 45 0;
-#X connect 46 1 47 0;
+#X connect 29 0 47 0;
+#X connect 30 0 48 0;
+#X connect 31 0 48 0;
+#X connect 32 0 48 0;
+#X connect 35 0 11 0;
+#X connect 36 0 38 0;
+#X connect 36 1 39 0;
+#X connect 36 2 40 0;
+#X connect 37 0 4 0;
+#X connect 37 1 4 0;
+#X connect 37 2 4 0;
+#X connect 37 3 4 0;
+#X connect 38 0 37 0;
+#X connect 39 0 37 0;
+#X connect 40 0 37 0;
+#X connect 41 0 43 0;
+#X connect 43 0 42 0;
+#X connect 43 1 44 0;
+#X connect 45 0 48 0;
+#X connect 46 0 32 0;
+#X connect 46 1 31 0;
+#X connect 46 2 30 0;
+#X connect 46 3 45 0;
+#X connect 47 0 22 0;
+#X connect 48 0 4 0;
+#X connect 48 1 4 0;
+#X connect 48 2 4 0;
+#X connect 48 3 4 0;
+#X connect 48 4 4 0;
 #X restore 2 455 pd sampler;
 #N canvas 96 37 606 380 clock 0;
 #X floatatom 272 99 5 0 0 0 - - -;
@@ -366,7 +371,7 @@ recording 8 seconds until full;
 #X obj 290 -65 throw~ reverb;
 #X obj 230 25 throw~ mainL;
 #X obj 493 -158 vsl 30 60 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3200 1;
+-1 -1 3319 1;
 #X obj 481 -88 *~;
 #X obj 556 -157 vsl 15 60 0 1 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
@@ -1069,10 +1074,10 @@ recording 8 seconds until full;
 #X obj -312 410 r time;
 #X obj 16 664 r time;
 #X obj -403 223 vsl 30 60 60 180 0 0 empty empty TEMPO 0 -9 1 10 -262130
--1 -1 1600 1;
+-1 -1 1475 1;
 #X obj -349 171 loadbang;
 #X obj -349 223 vsl 30 60 0 1000 0 0 empty empty INTENSITY 0 -9 1 10
--232576 -1 -1 3200 1;
+-232576 -1 -1 2300 1;
 #X obj -349 368 s intens;
 #X obj -453 518 r intens;
 #X obj -484 73 receive fromGUI;
@@ -1080,7 +1085,7 @@ recording 8 seconds until full;
 #X obj -421 130 * 120;
 #X obj -421 148 + 60;
 #X obj -358 130 * 1000;
-#N canvas 283 67 994 688 rhythmSampler 1;
+#N canvas 219 115 994 688 rhythmSampler 0;
 #X obj -37 -489 adc~;
 #X obj 7 515 outlet~ out;
 #X obj 15 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -2111,7 +2116,7 @@ down to randomly selected divisions. Resets;
 #X restore -196 597 pd scale;
 #X obj -242 171 loadbang;
 #X obj -242 223 vsl 30 60 0 4 0 0 empty empty SCALE 0 -9 1 10 -204800
--1 -1 1500 1;
+-1 -1 1000 1;
 #X msg -242 189 0;
 #X obj -151 577 r intens;
 #X obj -474 443 s 16th;
@@ -2404,7 +2409,7 @@ down to randomly selected divisions. Resets;
 #X obj -316 240 loadbang;
 #X floatatom -402 325 5 0 0 0 - - -;
 #X text -86 751 reactive m.i.r \; Oliveros et al. \, 2015-18 (inspired
-by previous personal developments and by http://www.sebsongs.com/reactiscape/)
+by previous doctoral developments and by http://www.sebsongs.com/reactiscape/)
 ;
 #X connect 2 0 33 0;
 #X connect 2 1 89 0;
